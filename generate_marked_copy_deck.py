@@ -282,6 +282,7 @@ def version_table(doc):
         ("August 19, 2026", "D4", "Client feedback + updates"),
         ("August 28, 2026", "D5", "Copy cut down"),
         ("September 8, 2026", "D5 + refs", "Reference markup against REF-15633, REF-20457, REF-29185"),
+        ("September 8, 2026", "D5 + refs 2", "Added sources 4–9 to support previously unreferenced FAQ/lifestyle lines"),
     ]
     table = doc.add_table(rows=len(data), cols=3)
     for i, row in enumerate(data):
@@ -300,12 +301,18 @@ def version_table(doc):
 
 
 def legend_table(doc):
-    table = doc.add_table(rows=4, cols=2)
+    table = doc.add_table(rows=10, cols=2)
     rows = [
         ("Markup", "Meaning"),
         ("Superscript 1", "REF-29185 — National Eye Institute (NIH). Presbyopia. Last updated December 4, 2024."),
         ("Superscript 2", "REF-15633 — Cleveland Clinic. Presbyopia. Last reviewed June 8, 2020."),
         ("Superscript 3", "REF-20457 — Gatinel D, Azar DT, Dumas L, Malet J. J Refract Surg. 2014;30(10):708-715."),
+        ("Superscript 4", "MedlinePlus. LASIK eye surgery. Updated January 27, 2026."),
+        ("Superscript 5", "American Academy of Ophthalmology. LASIK — Laser Eye Surgery."),
+        ("Superscript 6", "American Academy of Ophthalmology. Laser Surgery Recovery. Published May 25, 2023."),
+        ("Superscript 7", "Mayo Clinic. LASIK eye surgery."),
+        ("Superscript 8", "Wang C, et al. Clin Exp Ophthalmol. 2019;47(7):909-917."),
+        ("Superscript 9", "Courtin R, et al. J Refract Surg. 2016;32(11):734-741."),
     ]
     for i, (a, b) in enumerate(rows):
         c0, c1 = table.cell(i, 0), table.cell(i, 1)
@@ -542,6 +549,7 @@ def build():
     ])
     bullet(doc, [
         ("Stay connected and scroll through your day with clarity.", {"size": 11, "color": BODY}),
+        ("super", "5,8,9"),
     ])
     bullet(doc, [
         ("Pursue your passions and hobbies with greater comfort.", {"size": 11, "color": BODY}),
@@ -559,9 +567,10 @@ def build():
     note_box(
         doc,
         "MLR note — lifestyle lines",
-        "“Stay connected and scroll through your day with clarity” is promotional and is not specifically supported by the three PDFs. "
-        "Source 2 describes returning to near tasks (reading menus/novels, hobbies) after choosing a correction option, "
-        "and lists surgery among options for people who want to see up close again. It does not quantify “freedom from glasses.”",
+        "“Stay connected and scroll through your day with clarity” is still promotional phrasing. Related support: 5 (LASIK allows most everyday tasks without lenses); "
+        "8 (64.3% of smartphone-owning presbyopes reported difficulty using phones; worse near acuity was associated with more difficulty); "
+        "9 (Custom-Q + monovision: 83% achieved J3 or better binocular uncorrected near acuity). Source 2 covers hobbies/reading, not phones specifically.",
+        fill=LIGHT_TEAL,
     )
 
     section_label(doc, "[Subhead]")
@@ -577,12 +586,15 @@ def build():
     ])
     body_para(doc, [
         ("The procedure is quick, usually a few minutes per eye.", {"size": 11, "color": BODY}),
+        ("super", "4,7"),
     ])
     note_box(
         doc,
-        "Unreferenced — needs a source beyond the three PDFs",
-        "Procedure duration (“a few minutes per eye”) is not stated in REF-15633, REF-20457, or REF-29185. "
-        "Source 2 only describes refractive surgery as a minimally invasive outpatient procedure.",
+        "MLR note — procedure time wording",
+        "4: “LASIK is an outpatient surgical procedure. It takes 10 to 15 minutes to perform for each eye.” "
+        "7: “LASIK surgery is usually completed in 30 minutes or less.” "
+        "The copy’s “a few minutes per eye” is a simplification of those times; consider aligning to “about 10 to 15 minutes per eye” if MLR wants a closer match.",
+        fill=LIGHT_TEAL,
     )
 
     p = doc.add_paragraph()
@@ -606,12 +618,16 @@ def build():
     add_text(p, "3. Will I experience discomfort?", size=11, bold=True, color=ALCON_DARK)
     body_para(doc, [
         ("Numbing eye drops are typically used to help you experience little to no discomfort. After the procedure, your doctor may recommend or prescribe medication or eye drops to help manage any temporary discomfort. Individual results may vary.", {"size": 11, "color": BODY}),
+        ("super", "4,5,7"),
     ])
     note_box(
         doc,
-        "Unreferenced — needs a source beyond the three PDFs",
-        "Anesthetic drops, postoperative medication, and expected comfort are not described in the three provided references. "
-        "Source 1 and Source 2 discuss diagnostic dilating drops (exam), not surgical anesthesia.",
+        "MLR note — comfort language",
+        "4: “The only anesthetic used is eye drops that numb the surface of your eye.” The surgeon “may prescribe mild pain medicine”; postoperative “eye drops to help prevent infection and inflammation.” "
+        "5: “Your eye will be numbed with eye drops.” Afterward, eyes “may feel scratchy or… burning”; “special eye drops to reduce dryness and help your eye heal.” "
+        "7: numbing drops during the procedure; “You generally will experience little pain”; “pain medicine or eye drops to keep you comfortable for several hours after the procedure.” "
+        "“Little to no discomfort” during the procedure is supported; some sources describe moderate scratchiness after the anesthetic wears off.",
+        fill=LIGHT_TEAL,
     )
 
     p = doc.add_paragraph()
@@ -619,11 +635,15 @@ def build():
     add_text(p, "4. How soon can I get back to my routine?", size=11, bold=True, color=ALCON_DARK)
     body_para(doc, [
         ("Many people are able to return to normal activities the next day, while others may experience temporary side effects. Each person’s recovery after laser eye surgery is different.", {"size": 11, "color": BODY}),
+        ("super", "4,6,7"),
     ])
     note_box(
         doc,
-        "Unreferenced — needs a source beyond the three PDFs",
-        "Return-to-activity timing and temporary postoperative side effects are not stated in REF-15633, REF-20457, or REF-29185.",
+        "MLR note — recovery (LASIK, not READ-specific)",
+        "6: “In most cases, you can return to work, as well as drive, the day after the procedure.” Temporary blurry/changing vision, dry eyes, glare or halos can last weeks or months. PRK recovery is slower. "
+        "4: blurriness “will improve by the next day”; vision usually stabilizes in a few days, but may take 3 to 6 months for some. "
+        "7 (in-depth): “Discomfort after surgery is minimal, and vision recovery usually takes place in 1 to 2 days.” These are general LASIK statements, not READ™ outcomes.",
+        fill=LIGHT_TEAL,
     )
 
     section_label(doc, "[General Note]")
@@ -663,9 +683,39 @@ def build():
             "REF-20457",
             "Gatinel D, Azar DT, Dumas L, Malet J. Effect of anterior corneal surface asphericity modification on fourth-order Zernike spherical aberrations. J Refract Surg. 2014;30(10):708-715. doi:10.3928/1081597X-20140903-10",
         ),
+        (
+            "4",
+            "Assign REF ID",
+            "MedlinePlus. LASIK eye surgery. Updated January 27, 2026. Available at: https://medlineplus.gov/ency/article/007018.htm",
+        ),
+        (
+            "5",
+            "Assign REF ID",
+            "American Academy of Ophthalmology. LASIK — Laser Eye Surgery. Reviewed by Hura AS. Edited by Turbert D. Available at: https://www.aao.org/eye-health/treatments/lasik",
+        ),
+        (
+            "6",
+            "Assign REF ID",
+            "American Academy of Ophthalmology. Laser Surgery Recovery. Reviewed by Pagan-Duran B. Edited by Turbert D. Published May 25, 2023. Available at: https://www.aao.org/eye-health/treatments/laser-surgery-recovery",
+        ),
+        (
+            "7",
+            "Assign REF ID",
+            "Mayo Clinic. LASIK eye surgery. Available at: https://www.mayoclinic.org/tests-procedures/lasik-eye-surgery/about/pac-20384774. Related: Mayo Clinic. LASIK surgery: Is it right for you? Available at: https://www.mayoclinic.org/tests-procedures/lasik-eye-surgery/in-depth/lasik-surgery/art-20045751",
+        ),
+        (
+            "8",
+            "Assign REF ID",
+            "Wang C, Wang X, Jin L, Tang B, Zhu W, Zhang G, Chen T, McAneney H, Kassalow J, Congdon N. Influence of presbyopia on smartphone usage among Chinese adults: a population study. Clin Exp Ophthalmol. 2019;47(7):909-917. doi:10.1111/ceo.13559",
+        ),
+        (
+            "9",
+            "Assign REF ID",
+            "Courtin R, Saad A, Grise-Dulac A, Guilbert E, Gatinel D. Changes to corneal aberrations and vision after monovision in patients with hyperopia after using a customized aspheric ablation profile to increase corneal asphericity (Q-factor). J Refract Surg. 2016;32(11):734-741. doi:10.3928/1081597X-20160810-01",
+        ),
     ]
 
-    table = doc.add_table(rows=4, cols=3)
+    table = doc.add_table(rows=len(refs) + 1, cols=3)
     headers = ("No.", "Alcon REF ID", "Citation")
     for j, h in enumerate(headers):
         cell = table.cell(0, j)
@@ -699,12 +749,13 @@ def build():
 
     # ========== SUPPORT GRID ==========
     doc.add_page_break()
-    banner(doc, "Appendix  —  Claim-by-claim support from the three REF PDFs")
+    banner(doc, "Appendix  —  Claim-by-claim support (original three PDFs + additional sources 4–9)")
 
     body_para(doc, [(
         "This grid is the working annotation for medical/legal review. Green = the cited source(s) state the same meaning. "
         "Amber = related support, but the copy is broader than the source or is a product-framed interpretation. "
-        "Red = no support in the three PDFs provided. Quotes are taken from the supplied PDFs.",
+        "Sources 4–9 were added to cover copy that the original three PDFs did not support. Quotes are taken from the cited sources. "
+        "Procedure, comfort, and recovery sources describe LASIK generally, not READ™-specific outcomes.",
         {"size": 10, "color": BODY},
     )])
 
@@ -846,9 +897,9 @@ def build():
         (
             "Could READ™ Be Right for Me?",
             "Stay connected and scroll through your day with clarity",
-            "—",
-            "Not supported",
-            "No matching statement in REF-15633, REF-20457, or REF-29185.",
+            "5, 8, 9",
+            "Partial",
+            "5: LASIK “allows people to do most of their everyday tasks without corrective lenses.” 8: among smartphone-owning presbyopes, 64.3% reported difficulty using phones; difficulty was associated with worse near visual acuity. 9: after Custom-Q aspheric LASIK with monovision, 83% had J3 or better binocular uncorrected near acuity. The “scroll with clarity” phrasing is still promotional.",
         ),
         (
             "Could READ™ Be Right for Me?",
@@ -874,9 +925,9 @@ def build():
         (
             "FAQ 1",
             "The procedure is quick, usually a few minutes per eye",
-            "—",
-            "Not supported",
-            "Not stated in the three PDFs. 2 only: refractive surgery is “considered a minimally-invasive outpatient surgery.”",
+            "4, 7",
+            "Partial",
+            "4: “It takes 10 to 15 minutes to perform for each eye.” 7: “LASIK surgery is usually completed in 30 minutes or less.” Supports that the procedure is short/outpatient. “A few minutes per eye” is a looser paraphrase of 10–15 minutes.",
         ),
         (
             "FAQ 2",
@@ -888,16 +939,16 @@ def build():
         (
             "FAQ 3",
             "Numbing eye drops; little to no discomfort; postoperative medication/drops for temporary discomfort",
-            "—",
-            "Not supported",
-            "Not in the three PDFs. Dilating drops in 1/2 refer to the diagnostic exam, not surgical anesthesia.",
+            "4, 5, 7",
+            "Supported",
+            "4: “The only anesthetic used is eye drops that numb the surface of your eye.” Surgeon may prescribe mild pain medicine; postoperative drops to prevent infection and inflammation. 5: “Your eye will be numbed with eye drops.” Afterward, eyes may feel scratchy/burning; “special eye drops to reduce dryness and help your eye heal.” 7: numbing drops; “You generally will experience little pain”; “pain medicine or eye drops to keep you comfortable for several hours after the procedure.”",
         ),
         (
             "FAQ 4",
             "Many people return to normal activities the next day; temporary side effects; recovery differs",
-            "—",
-            "Not supported",
-            "Not stated in REF-15633, REF-20457, or REF-29185.",
+            "4, 6, 7",
+            "Supported",
+            "6: “In most cases, you can return to work, as well as drive, the day after the procedure.” Temporary blurry/changing vision, dry eyes, glare or halos can last weeks or months; PRK takes longer. 4: blurriness improves by the next day; some people take days to 3–6 months to stabilize. 7: “vision recovery usually takes place in 1 to 2 days”; temporary side effects (dry eyes, vision changes) are fairly common.",
         ),
         (
             "[General Note]",
@@ -925,6 +976,12 @@ def build():
         "REF-29185 (1) — NIH patient page. Best support for: definition of presbyopia, “normal part of aging,” lens flexibility / light not focusing on the retina / near blur, symptom list, glasses and contact lenses, comprehensive eye exam, educational disclaimer tone. Does not cover surgery, laser, READ™, recovery, or comfort.",
         "REF-15633 (2) — Cleveland Clinic patient page. Best support for: near-task examples (phone, menus), aging lens, symptoms, the management menu (readers, prescription glasses, progressives, contacts, laser, lens replacement), candidacy conversation (exam, health history, lifestyle), and returning to close-up activities. Laser for presbyopia is described as monovision LASIK/PRK/SMILE, not as READ™.",
         "REF-20457 (3) — Gatinel et al., Journal of Refractive Surgery, 2014. Best support for: aspheric / Q-value customized excimer ablation (including Alcon Custom Q) to induce negative spherical aberration, extend depth of focus, and compensate for presbyopia. Does not name READ™ and does not contain patient-facing outcome, comfort, or recovery data.",
+        "MedlinePlus (4) — LASIK encyclopedia page. Best support for: 10–15 minutes per eye; topical anesthetic (numbing) drops only; postoperative pain medicine and anti-inflammatory/antibiotic drops; vision often clearer the next day; recovery varies.",
+        "AAO LASIK (5) — Patient page. Best support for: numbing drops during surgery; postoperative lubricating/healing drops; everyday tasks without glasses/contacts; temporary side effects (scratchiness, dry eye, glare).",
+        "AAO Laser Surgery Recovery (6) — Best support for: most people return to work and driving the day after LASIK; temporary side effects; PRK recovers more slowly.",
+        "Mayo Clinic (7) — Best support for: procedure usually ≤30 minutes; numbing drops; little pain; postoperative pain medicine or drops; vision recovery in 1–2 days.",
+        "Wang et al. (8) — Population study. Best support for: uncorrected presbyopia commonly makes smartphone use difficult (64.3% of smartphone-owning presbyopes); worse near acuity → more difficulty.",
+        "Courtin et al. (9) — Custom-Q clinical series (Alcon Custom-Q / WaveLight; READ-related method). Best support for: uncorrected near acuity after aspheric presbyopic LASIK (83% J3 or better binocular UNVA at 6 months).",
     ]
     for t in bullets_src:
         bullet(doc, [(t, {"size": 10, "color": BODY})])
