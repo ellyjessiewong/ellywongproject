@@ -1,4 +1,6 @@
-# Trade Journal assistant
+# Trading Journal assistant
+
+This folder is your **Trading Journal** bot.
 
 ## Skills
 
