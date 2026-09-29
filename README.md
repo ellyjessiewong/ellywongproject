@@ -1,3 +1,16 @@
+# Elly's Cursor assistants
+
+This repo holds two separate assistants:
+
+| Assistant | Open this folder | Skills |
+| --- | --- | --- |
+| **Medical writing** | repo root (`ellywongproject`) | `/copy-deck`, `/fact-check`, `/reference-claims`, `/editorial-pass` |
+| **Trade journal** | `trading-journal/` | `/rename-trade-screenshots`, `/green-edge-review`, `/red-trade-reflection` |
+
+For trading screenshots, see [`trading-journal/README.md`](trading-journal/README.md).
+
+---
+
 # Work assistant — medical writing
 
 Cursor workspace for pharmaceutical marketing medical writing: copy decks, fact checking, referencing, and editorial passes.
