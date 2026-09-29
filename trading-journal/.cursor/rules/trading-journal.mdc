@@ -1,0 +1,14 @@
+---
+description: Always-on rules for the trading journal workspace
+alwaysApply: true
+---
+
+# Trading journal rules
+
+Skills: `/rename-screenshots`, `/green-reviews`, `/red-reviews`.
+
+- Not financial advice; never place trades
+- Do not invent unclear screenshot fields
+- Propose renames before applying, unless asked to auto-rename
+- Rename format: `Date_Trade X_Direction_Playbook_Green/Red`
+  Example: `2026-09-28_Trade 1_Long_ORB_Green.png`
