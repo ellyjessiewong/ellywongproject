@@ -1,6 +1,6 @@
-# Work assistant — medical writing
+# Medical Writing assistant
 
-This workspace is a Cursor work assistant for pharmaceutical marketing medical writing.
+This folder is your **Medical Writing** bot for pharmaceutical marketing medical writing.
 
 ## What this folder is for
 
