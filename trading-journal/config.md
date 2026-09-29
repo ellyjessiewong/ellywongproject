@@ -1,7 +1,7 @@
 # Local screenshot folder (optional)
 
 If your screenshots live somewhere else on your computer, paste the full path below.
-When you run `/rename-trade-screenshots`, the assistant will use this path if `inbox/` is empty.
+When you run `/rename-screenshots`, the assistant will use this path if `inbox/` is empty.
 
 ## Local path
 

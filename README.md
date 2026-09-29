@@ -5,7 +5,7 @@ This repo holds two separate assistants:
 | Assistant | Open this folder | Skills |
 | --- | --- | --- |
 | **Medical writing** | repo root (`ellywongproject`) | `/copy-deck`, `/fact-check`, `/reference-claims`, `/editorial-pass` |
-| **Trade journal** | `trading-journal/` | `/rename-trade-screenshots`, `/green-edge-review`, `/red-trade-reflection` |
+| **Trade journal** | `trading-journal/` | `/rename-screenshots`, `/green-reviews`, `/red-reviews` |
 
 For trading screenshots, see [`trading-journal/README.md`](trading-journal/README.md).
 
